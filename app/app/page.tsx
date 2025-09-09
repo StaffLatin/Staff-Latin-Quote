@@ -272,7 +272,7 @@ function QuoteSection(props: any) {
                 <div className="sm:col-span-2">
                   <label className="block text-sm font-medium text-slate-700">Engagement model</label>
                   <div className="mt-1 grid grid-cols-2 gap-2">
-                    {Object.entries(MODELS).map(([key, m]) => (
+                    {(Object.entries(MODELS) as Array<[keyof typeof MODELS, Model]>).map(([key, m]) => (
                       <button
                         type="button"
                         key={key}
