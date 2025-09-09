@@ -32,6 +32,9 @@ const ROLE_BENCHMARKS = [
 
 type Model = { label: string; feeNote: string; feePct: number };
 
+// Types for engagement models
+type Model = { label: string; feeNote: string; feePct: number };
+
 const MODELS: Record<"recruitOnly" | "fullyManaged", Model> = {
   recruitOnly: { label: "Recruit-Only", feeNote: "10% of annual comp (50% deposit)", feePct: 0.10 },
   fullyManaged: { label: "Fully Managed", feeNote: "+35% on contractor take-home", feePct: 0.35 },
