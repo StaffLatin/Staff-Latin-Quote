@@ -30,11 +30,6 @@ const ROLE_BENCHMARKS = [
   { role: "Marketing Ops", usMin: 85000, usMax: 110000, latinMin: 42000, latinMax: 60000 },
 ];
 
-type Model = { label: string; feeNote: string; feePct: number };
-
-// Types for engagement models
-type Model = { label: string; feeNote: string; feePct: number };
-
 // Types for engagement models
 type Model = { label: string; feeNote: string; feePct: number };
 
