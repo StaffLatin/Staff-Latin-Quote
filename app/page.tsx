@@ -33,10 +33,28 @@ const ROLE_BENCHMARKS = [
 // Types for engagement models (keep ONLY one copy of this type in the file)
 type Model = { label: string; feeNote: string; feePct: number };
 
-const MODELS: Record<"recruitOnly" | "fullyManaged", Model> = {
-  recruitOnly: { label: "Recruit-Only", feeNote: "10% of annual comp (50% deposit)", feePct: 0.10 },
-  fullyManaged: { label: "Fully Managed", feeNote: "+35% on contractor take-home", feePct: 0.35 },
-};
+<div className="sm:col-span-2">
+  <label className="block text-sm font-medium text-slate-700">Engagement model</label>
+  <div className="mt-1 grid grid-cols-2 gap-2">
+    {(Object.entries(MODELS) as [keyof typeof MODELS, Model][])
+      .map(([key, m]) => (
+        <button
+          type="button"
+          key={key}
+          onClick={() => setModel(key)}
+          className={`rounded-xl border p-3 text-left ${
+            model === key
+              ? "border-indigo-600 ring-2 ring-indigo-200 bg-indigo-50"
+              : "border-slate-300 hover:border-slate-400"
+          }`}
+        >
+          <div className="font-semibold">{m.label}</div>
+          <div className="text-xs text-slate-600">{m.feeNote}</div>
+        </button>
+      ))}
+  </div>
+</div>
+
 
 // later where you declare state:
 const [model, setModel] = useState<keyof typeof MODELS>("fullyManaged");
