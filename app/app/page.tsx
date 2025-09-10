@@ -30,8 +30,11 @@ const ROLE_BENCHMARKS = [
   { role: "Marketing Ops", usMin: 85000, usMax: 110000, latinMin: 42000, latinMax: 60000 },
 ];
 
-const MODELS: any = {
-  recruitOnly: { label: "Recruit-Only", feeNote: "10% of annual comp (50% deposit)", feePct: 0.1 },
+// Types for engagement models (keep ONE copy of this)
+type Model = { label: string; feeNote: string; feePct: number };
+
+const MODELS: Record<"recruitOnly" | "fullyManaged", Model> = {
+  recruitOnly: { label: "Recruit-Only", feeNote: "10% of annual comp (50% deposit)", feePct: 0.10 },
   fullyManaged: { label: "Fully Managed", feeNote: "+35% on contractor take-home", feePct: 0.35 },
 };
 
